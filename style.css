@@ -2,3 +2,34 @@ html {
 	background-color: rgb(13, 17, 23);
 	color: white;
 }
+
+a, a:visited {
+	color: white;
+	text-decoration: underline;
+}
+a:hover {
+	color: gray;
+}
+
+.container {
+	display: block;
+}
+.contacts {
+    flex: 1 1;
+}
+.contacts div {
+	display: flex;
+    align-items: center;
+}
+.contacts div i {
+/*	width: 20px;
+	height: 20px;*/
+	padding-right: 4px;
+}
+
+h2 {
+	border-bottom: 1px solid white;
+}
+.fa-solid.small {
+	font-size:70%;
+}
