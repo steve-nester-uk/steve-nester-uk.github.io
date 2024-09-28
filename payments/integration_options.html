@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="A Guide To Payment Service Integration Options">
+    <meta name="image" content="https://steve-nester-uk.github.io/assets/images/integration_options.png">        
+    <link rel="stylesheet" href="../style.css">
+    <title>A Guide To Payment Service Integration Options</title>
+  </head>
+  <body>
+    <main>
+        <p><a href="../index.html">back home</a></p>
+        <h1>A Guide To Payment Service Integration Options</h1>
+
+        <hr>
+
+        <p>
+          Thank you for stopping by! Below is a comprehensive guide to the various integration options available for merchants when integrating a payment service. If you have any questions or think I’ve missed anything, feel free to reach out!
+        </p>
+        <ol>
+          <li><a href="#direct_api">Direct API</a></li>
+          <li><a href="#hosted_fields">Hosted Fields</a></li>
+          <li><a href="#proxy">Proxy Interface</a></li>
+          <li><a href="#sftp">SFTP / Batch Interface</a></li>
+          <li><a href="#sdks">SDKs</a></li>
+          <li><a href="#plugins">Plugins</a></li>
+          <li><a href="#hosted_forms">Hosted or Embedded Forms</a></li>
+          <li><a href="#virtual_terminal">Virtual Terminal</a></li>
+          <li><a href="#pos_terminals">POS terminals</a></li>
+        </ol>
+
+        <figure>
+          <img src="../assets/images/integration_options.png" class="centre" />
+          <figcaption class="text-centre">Payment Service Integration Options.  Image created in draw.io by Steve Nester</figcaption>
+        </figure>
+        
+        <section>
+          <h2 id="direct_api">Direct API</h2>
+          <p>
+            A Direct API integration is typically used by large merchants or integrators who are PCI DSS compliant and comfortable handling card data on their servers. It allows merchants to collect payment information and send it directly to the payment service via an API.
+          </p>
+          <h4>Things to consider:</h4>
+          <ul>
+            <li>Does the merchant <i>need</i> or <i>want</i> to handle card data? Why?</li>
+            <li>Does the payment service provide robust API documentation?</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 id="hosted_fields">Hosted Fields</h2>
+          <p>
+            Hosted Fields are similar to <a href="#hosted_forms">Hosted Forms</a> but individual fields (such as card number or CVV) are hosted by the payment service instead of the entire form. Hosted Fields offer greater UI design flexibility while reducing some PCI DSS compliance requirements.
+          </p>
+          <h4>Things to consider:</h4>
+          <ul>
+            <li>Hosted Fields usually only support a limited range of payment methods. What is your alternative payment method strategy?</li>
+            <li>Hosting fields in mobile apps is different from web, as mobile apps cannot use iframes in the same way.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 id="proxy">Proxy Interface</h2>
+          <p>
+            A Proxy Interface enables integration without requiring the merchant to follow the payment service's specific format. Instead, the proxy translates the merchant’s requests into the required format. This is commonly used with tokenization for PCI DSS relief or to handle encrypted payloads passed through the merchant's servers and decrypted by the proxy service.
+          </p>
+          <h4>Things to consider:</h4>
+          <ul>
+            <li>Does your system have rigid interface code that can’t be easily modified? A proxy might be the solution.</li>
+            <li>There could be additional costs due to custom development on the payment service’s end.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 id="sftp">SFTP / Batch Interface</h2>
+          <p>
+            Batch payments happen less often in the modern world, partly due to security (of sending a file with secure data in) and partly due to the fact that internet speeds and range of connectivity have increased and it's a lot easier to stay connected at a good rate always.  A use-case I've come across in the past is where a cruise ship takes all payment via the old mag-stipe readers and then enters the payment when they reach land (that wasn't so long ago you know!).<br>
+            Nevertheless, Batch is still requested from time to time, even in 2024.  It works by sending a file, normally over SFTP or similar, where the file contains a row per transaction and may contain thousands of transactions in a single file.<br>
+            Interesting fact: settlement files are still mostly offline and sent in this way - yep, I'm not shitting you kids! :D.
+          </p>
+          <h4>Things to consider:</h4>
+          <ul>
+            <li>Is batch processing still necessary for your business in 2024?</li>
+            <li>Ensure that each transaction in the batch is individually traceable and reconcilable.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 id="sdks">SDKs</h2>
+          <p>
+            There are lots of types of SDKs that facilitate other integration options, e.g. many mobile SDKs are just a wrapper for opening the <a href="#hosted_forms">hosted forms</a> solution in a webview.  SDKs can be useful and save time when integration.
+          </p>
+          <h4>Things to consider:</h4>
+          <ul>
+            <li>Does the payment service regularly update its SDKs?</li>
+            <li>Is the SDK well-documented and easy to use?</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 id="plugins">Plugins</h2>
+          <p>
+            Plugins are pre-built solutions that integrate with third-party platforms (like shopping carts or ERP systems). Payment service providers often work with these platforms to develop plugins and merchants typically have little control over their implementation.
+          </p>
+          <h4>Things to consider:</h4>
+          <ul>
+            <li>How often is the plugin updated, and how is it kept in sync with platform changes?</li>
+            <li>Is there a cost for the plugin, and how does support work?</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 id="hosted_forms">Hosted Forms</h2>
+          <p>
+            Hosted or Embedded Forms are a popular choice for merchants because they remove the burden of handling card data directly. These forms are usually embedded in the checkout process via iframes or provided through a redirect flow.
+          </p>
+          <h4>Things to consider:</h4>
+          <ul>
+            <li>How much control do you need over the form’s styling to match your brand’s checkout?</li>
+            <li>How does the form handle failed or declined transactions?</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 id="virtual_terminal">Virtual Terminal</h2>
+          <p>
+            A Virtual Terminal allows a merchant’s staff to process payments on behalf of customers, often used in call centers. However, due to PCI DSS restrictions, many merchants now prefer to use payment links or IVR systems.
+          </p>
+          <h4>Things to consider:</h4>
+          <ul>
+            <li>Would an IVR solution reduce friction and be cost-effective for your business?</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 id="pos_terminals">POS Terminals</h2>
+          <p>
+            For in-person transactions, Point of Sale (POS) Terminals are essential. These devices read cards and communicate with payment networks. Though they often come with built-in software, setting up the hardware and configurations can require effort.
+          </p>
+          <h4>Things to consider:</h4>
+          <ul>
+            <li>What are the hardware setup requirements, and how will the POS terminal integrate with your payment systems?</li>
+          </ul>
+        </section>
+        
+    </main>
+</body>
+</html>
