@@ -3,6 +3,10 @@ html {
 	color: white;
 }
 
+main {
+	max-width: 1000px;
+	margin: auto;
+}
 a, a:visited {
 	color: white;
 	text-decoration: underline;
@@ -27,9 +31,7 @@ a:hover {
 	padding-right: 4px;
 }
 
-h2 {
-	border-bottom: 1px solid white;
-}
+
 .fa-solid.small {
 	font-size:70%;
 }
@@ -37,7 +39,36 @@ h2 {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  max-width: 100%;
 }
 .text-centre {
 	text-align: center;
+}
+
+h1 {
+    text-align: center;
+    color: #d4c0d9;
+}
+/*h2 {
+	border-bottom: 1px solid white;
+}*/
+h2 {
+    color: #b3d0ed;
+}
+h3 {
+    color: #f5ff8d;
+}
+p {
+    margin: 10px 0;
+}
+.quote {
+    font-style: italic;
+    color: #f5ff8d;
+    margin: 20px;
+    text-align: center;
+    font-size: 1.2em;
+}
+.epic {
+    font-weight: bold;
+    color: #e74c3c;
 }
