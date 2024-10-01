@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html lang="en"><head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
     <title>blockchain</title>
   </head>
   <body>
     <main>
-        <p><a href="../index.html">back home</a></p>
+        <header class="header">
+            <nav>
+                <a href="../index.html">
+                    <div class="navLeft">
+                        <img src="../assets/images/steve_cartoon2.png" alt="Logo" />
+                        <div class="navTitle">Steve Nester</div>
+                    </div>
+                </a>
+                <ul class="navRight">
+                    <li><a href="https://x.com/stevenesteruk">Twitter</a></li>
+                    <li><a class="" href="../about.html">About</a></li>
+                </ul>
+            </nav>
+        </header>
         <h1>Blockchain</h1>
         
         <p>
@@ -20,14 +34,158 @@
 
         
         <p>
-          A blockchain is a distributed open ledger where each block is cryptographically linked to the previous, recording all transactions and making hacking almost impossible.
-
-          The first block on the blockchain was the <a href="https://www.blockchain.com/explorer/blocks/btc/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f">genesis block</a>.
-
-          <br>
-
-          As new transactions happen they get written to the blockchain by miners.
+          A blockchain is a distributed, decentralized and immutable digital ledger that records transactions across a peer-to-peer network. 
+          <br><br>
+          Transactions are recorded in a block, which is a basically a container for data.
+          <br><br>
+          Each block is cryptographically linked to the previous, recording all transactions and making hacking almost impossible.  The sequence of blocks is referred to as the <b>chain</b>.
+          <br><br>
+          Each participant in the blockchain network holds a copy of the entire ledger, so no single entity owns it.
+          <br><br>
+          Having no central authority controlling the ledger is what makes a blockchain appealing and gives it additional trust and authority.
+          <br><br>
+          The first block on the bitcoin blockchain was the <a href="https://www.blockchain.com/explorer/blocks/btc/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f">genesis block</a>.
         </p>
+        <h3>Blocks</h3>
+        <p>
+          Each block contains:
+        </p>
+        <ul>
+          <li>
+            Transaction data: Information about transactions (e.g., sender, receiver, amount).
+          </li>
+          <li>
+            Timestamp: The time at which the block was created.
+          </li>
+          <li>
+            Hash: A unique digital fingerprint of the block’s data.
+          </li>
+          <li>
+            Previous block’s hash: This links the block to the preceding one, forming a chain.
+          </li>
+        </ul>
+        <h3>Chain</h3>
+        <p>
+          Blocks are linked together in a linear, chronological order. Once a block is added, it cannot be altered without changing all subsequent blocks, ensuring data integrity.
+        </p>
+
+        <h3>Nodes</h3>
+        <p>
+          Computers in the blockchain network are known as nodes. Each node has a full copy of the blockchain. Nodes work together to validate new blocks.
+        </p>
+
+        <h3>Consensus mechanism</h3>
+        <p>
+          Blockchain networks use different methods for participants to agree on the validity of new blocks, ensuring they are legitimate. Common consensus mechanisms include:
+        </p>
+        <ul>
+          <li>
+            <b>Proof of Work (PoW)</b>: Miners solve complex mathematical problems to validate transactions.
+          </li>
+          <li>
+            <b>Proof of Stake (PoS)</b>: Validators stake a portion of their cryptocurrency to gain the right to validate transactions.
+          </li>
+        </ul>
+
+        <h3>How Blockchain Works</h3>
+        <ol>
+          <li>
+            <b>A transaction occurs</b>: Let's say Alice sends Bob some cryptocurrency. This transaction is represented as data and broadcast to the blockchain network.
+          </li>
+          <li>
+            <b>Transaction verification</b>: Nodes (computers) in the network verify the transaction using cryptographic algorithms to ensure that Alice has enough balance and that the transaction follows the network's rules.
+          </li>
+          <li>
+            <b>Transaction added to a block</b>: After verification, the transaction is bundled with other transactions into a new block.
+          </li>
+          <li>
+            <b>Consensus</b>: The network's nodes use a consensus mechanism (e.g., PoW or PoS) to agree that the new block is valid. Once a consensus is reached, the block is added to the blockchain.
+          </li>
+          <li>
+            <b>Block added to the chain</b>: The newly validated block is permanently added to the blockchain. Each block has a reference (hash) to the previous block, forming a chain.
+          </li>
+          <li>
+            <b>Transaction confirmed</b>: The transaction between Alice and Bob is now part of the blockchain, and both can see it on the ledger. This record cannot be altered.
+          </li>
+        </ol>
+
+        <h2>Questions</h2>
+
+        <h3>How does a participant or node join a blockchain?</h3>
+        <p>
+          Basically any computer on the internet can become a node. The easiest way is to download the bitcoin core software, which would first download a full copy of the blockchain, which at the time of writing stands around 600 GB and is then ready to start receiving transactions and validating blocks. Here is a good resource explaining the steps: <a href="https://learnmeabitcoin.com/technical/networking/node/" target="_blank">learnmeabitcoin.com</a>.  
+
+
+        </p>
+
+        <h3>A node is connected to some other nodes, how is the nodes it is assigned to decided?</h3>
+
+        <p>There are three options that Bitcoin Core uses to find other nodes:</p>
+        <ul>
+          <li>
+            Previous Connections. Bitcoin Core maintains a list of nodes it has previously connected to, and tries connecting to those again once it starts up.
+          </li>
+          <li>
+            DNS Seeds. If you're running Bitcoin Core for the first time, you won't have a database of previous nodes, so it will use DNS Seeds like the ones above to find nodes to connect to.
+          </li>
+          <li>
+            Hardcoded List. If all else fails, Bitcoin Core comes with a hard-coded list of "Seed Nodes" it will connect to and use as a starting point to help it find other nodes on the network. This list can be found in chainparamsseeds.h.
+          </li>
+        </ul>
+
+        <h3>Where is bitcoin (and others) source code?</h3>
+        <ul>
+          <li><a href="https://github.com/bitcoin/bitcoin" target="_blank">https://github.com/bitcoin/bitcoin</a></li>
+          <li>https://bitcoincore.org/en/download/</li>
+        </ul>
+
+        <h3>Who is the creator of Bitcoin</h3>
+        <p>
+          No one really knows who the creator is, there are some theories but many of them deny being Satoshi Nakamoto, here is a good article from <a href="https://cointelegraph.com/learn/who-is-satoshi-nakamoto-the-creator-of-bitcoin" target="_blank">cointelegraph</a>.
+        </p>
+
+        <h3>How does someone get an address on the blockchain</h3>
+        <p>An address on the blockchain is derived from a private key, a private key is a randomly generated 256-bit number <a href="https://learnmeabitcoin.com/beginners/guide/keys-addresses/" target="_blank">https://learnmeabitcoin.com/beginners/guide/keys-addresses/</a></p>
+
+        <h3>What is the 12 or 24 word mnemonic seed?</h3>
+        <p>
+          In a series of steps the mnemonic seed can be converted to the private key, so remembering the 12 word mnemonic is as good as remembering the private key.  The steps are:
+        </p>
+        <ol>
+          <li>Convert the mnemonic to a 512-bit seed using a key derivation function, such as PBKDF2 or BIP39</li>
+          <li>Convert the seed to a 256-bit master key using an HD key generation algorithm, such as BIP32</li>
+          <li>Convert the master Key to private key using an HD key derivation algorithm, such as BIP32 or BIP44</li>
+        </ol>
+        <p>
+          It is worth noting that it's not possible to use a private key to generate a 12-word mnemonic.  Either you generate a private key or a generator will provide you with a 12-word mnemonic.
+        </p>
+
+        <h3>What is mining?</h3>
+        <p>
+          A competition across the network to hash a candidate block so the resulting hash is below a target number.  The target number can change to control how quickly/slowly (or how hard it is) to find a hash.
+          <br><br>
+          If a node successfully finds a hash first, they submit it to the rest of the network and can claim a reward for their efforts.
+        </p>
+        <h3>How do transactions make it into the block?</h3>
+        <p>
+          When a transaction is created it is submitted to a node and then gets propagated throughout the network from node-to-node.  The transactions are stored in each node's memory pool, ready to be included in the candidates block and eventually a block on the blockchain.
+          <br><br>
+          The network resolves conflicting transactions by rejecting any transactions in a memory pool that conflicts with one already written into a block.
+          <br><br>
+          Transactions in the memory pool can be removed for other reasons as well:
+        </p>
+        <ul>
+          <li>when it is successfully mined</li>
+          <li>replaced with a transaction with higher fee</li>
+          <li>expiration after 2 weeks</li>
+          <li>size limit - 300 MB, if the size limit is reached the transaction with the lowest fee is removed</li>
+        </ul>
+        <p>
+          The maximum size of a block is 4,000,000 weight units.
+        </p>
+
+        <h3>What are layers</h3>
+
         <p>
           Today, in 2024, the blockchain/crypto industry is maturing and multiple layers of the technology have formed to allow improved experiences and reduce issues with scalability and transaction fees:
         </p>
@@ -62,9 +220,11 @@ custodial vs non-custodial - coinbase exchange vs coinbase wallet
 with non-custodial, you own your private key
 On-ramp vs Off-ramps
 what are Roll-ups
-smart contracts
+smart contracts - recurring payments using smart contacts?
 51% attacks
 Why does it matter?
+https://blockstream.com/green/
+
         </pre>
 
     </main>

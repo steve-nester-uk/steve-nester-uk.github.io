@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="A Guide To Payment Service Integration Options">
+    <meta name="image" content="https://steve-nester-uk.github.io/assets/images/customer_payment_modes.png">        
+    <link rel="stylesheet" href="../style.css">
+    <title>A Guide To Customer Payment Modes</title>
+  </head>
+  <body>
+    <main>
+        <header class="header">
+            <nav>
+                <a href="../index.html">
+                    <div class="navLeft">
+                        <img src="../assets/images/steve_cartoon2.png" alt="Logo" />
+                        <div class="navTitle">Steve Nester</div>
+                    </div>
+                </a>
+                <ul class="navRight">
+                    <li><a href="https://x.com/stevenesteruk">Twitter</a></li>
+                    <li><a class="" href="../about.html">About</a></li>
+                </ul>
+            </nav>
+        </header>
+        <h1>A Guide To Customer Payment Modes</h1>
+
+        <hr>
+
+        <p>
+          Here are the various ways a customer can pay, i.e. customer payment modes.  Not to be confused with which payment methods they can use.  I've managed to think of 13 below but I have a feeling this list isn't comprehensive so please do let me know what other I've missed.
+        </p>
+        <ol>
+          <li><a href="#direct_entry">Direct entry</a></li>
+          <li><a href="#card_on_file">Card-on-file</a></li>
+          <li><a href="#nfc">NFC</a></li>
+          <li><a href="#emv">EMV</a></li>
+          <li><a href="#magstripe">Magstripe</a></li>
+          <li><a href="#cheque">Cheque</a></li>
+          <li><a href="#cash">Cash</a></li>
+          <li><a href="#redirect">Redirect</a></li>
+          <li><a href="#loyalty">Loyalty Points</a></li>
+          <li><a href="#digital_wallets">Digital Wallet</a></li>
+          <li><a href="#qr_code">QR Code</a></li>
+          <li><a href="#push_payment">Push Payment</a></li>
+          <li><a href="#smart_contracts">Smart Contracts</a></li>
+        </ol>
+
+        <figure>
+          <img src="../assets/images/customer_payment_modes.png" class="centre" />
+          <figcaption class="text-centre">Customer Payment Modes.  Image created in draw.io by Steve Nester</figcaption>
+        </figure>
+        
+        <section>
+          <h2 id="direct_entry">Direct entry</h2>
+          <p>
+            The customer enters their card number (or other account number) directly onto the merchant's website.
+          </p>
+          <h4>Things to consider:</h4>
+          <ul>
+            <li>The merchant needs to accept the correct scheme or protocol compared to the customer's account.  For example, if the customer has a Amex card and the merchant only supports Visa and MasterCard, the transaction will fail.  Often the merchant will display supported schemes and protocols on the checkout before the customer enters their card details.</li>
+            <li>The customer should take steps to ensure the security of their account numbers, if the numbers get into the wrong hands they can be used to make transactions fraudulently.  Steps include making sure the merchant's checkout is secured by SSL and they don't share their card number to unreputable sources (in fact, I would recommend never sharing your account number anywhere other than a secure online form).</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 id="card_on_file">Card-on-file</h2>
+          <p>
+            The customer has previously given the merchant or their partners permission to store their card details.  A subsequent checkout is often quicker, more streamlined and more secure so the customer doesn't have to enter their card details again.
+          </p>
+          <h4>Things to consider:</h4>
+          <ul>
+            <li>The customer may still need to enter their CVV, which adds a little friction</li>
+            <li>If your card gets lost or stolen, the customer may need to re-enter their card details with the merchant.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 id="nfc">NFC</h2>
+          <p>
+            NFC is built into modern smart phones and devices with secure elements storing a device token representing a payment method.  To pay using NFC the customer has to tap their device against an NFC terminal.  The devices communicate over NFC and pass appropriatly encrypted device token for use in a payment request.
+          </p>
+          <h4>Things to consider:</h4>
+          <ul>
+            <li>Often a 2nd factor authentication is required on the device, such as FaceID or double-tap, to confirm the payment request</li>
+            <li>The combination is generally very secure, even if a fraudster gets their hands on a device token, the whole account is not comprimised as it can be cancelled and reissued without giving the fraudster access to the full card number.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 id="emv">EMV</h2>
+          <p>
+            The EMV is a physical chip protocol embedded into a card for securely communicating the card details between the card and the terminal.  A EMV transaction requires a PIN as a 2nd factor authentication.
+          </p>
+          <h4>Things to consider:</h4>
+          <ul>
+            <li>If a fraudster gets hold of the card and the PIN, they can do some damage, so a customer must keep their PIN secure.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 id="magstripe">Magstripe</h2>
+          <p>
+            Magstripes will soon be a thing of the past.  Data is stored in a magnetic strip on the card and read by a card reader for processing.
+          </p>
+          <h4>Things to consider:</h4>
+          <ul>
+            <li>Modern cards should be issued without Magstripe and are replaced with EMV or NFC.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 id="cheque">Cheque</h2>
+          <p>
+            Cheque's too are becoming a thing of the past in today's digital world, nevertheless many banks do still issue cheque books upon request.  A cheque is essentially a trust based system with personal account details listed (and sometimes even the card number written on the back to guarentee it).
+          </p>
+          <h4>Things to consider:</h4>
+          <ul>
+            <li>If you have a cheque book, I would recommend throwing it away.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 id="cash">Cash</h2>
+          <p>
+            Most modern forms of cash are fiat currencies, meaning it is a government-issued currency that's not backed by a physical commodity such as gold or silver.  Most people understand this one, the customer hands over their cash in exchange for goods and services.
+          </p>
+          <h4>Things to consider:</h4>
+          <ul>
+            <li>Cash is easy to get lost or stolen, so customers need to be careful with their cash</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 id="redirect">Redirect</h2>
+          <p>
+            After choosing to pay with a method that requires a redirect, the merchant will essentially authenticate and authorize the payment method provider to make the payment.
+          </p>
+          <h4>Things to consider:</h4>
+          <ul>
+            <li>Customers need to keep their passwords secret and should use 2FA if possible</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 id="loyalty">Loyalty Points</h2>
+          <p>
+            Small amounts of loyalty points are earned as a reward for frequent shopping, loyalty program different in how they are redeemed but enough loyalty points could buy a flight or even holiday.
+          </p>
+          <h4>Things to consider:</h4>
+          <ul>
+            <li>Customers need to keep track on whether their loyalty points will expire</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 id="digital_wallets">Digital Wallets</h2>
+          <p>
+            Similar to NFC payments, Apple, Google and others provide Digital Wallets that allow the customer to tokenise their card and use on an ecommerce checkout instead of entering their card details.  It is a more secure method that allows direct communication between the device and merchant, without passing the customers card number.
+          </p>
+          <h4>Things to consider:</h4>
+          <ul>
+            <li>There may be limits to transaction values for digital wallet transaction</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 id="qr_code">QR Code</h2>
+          <p>
+            The customer scans a QR code presented by the merchant to get redirected to their favourite wallet, similar to redirect methods expect often the authentication experience is more mobile-centric and can take advantage of device authentication such as FaceID, etc.
+          </p>
+          <h4>Things to consider:</h4>
+          <ul>
+            <li>Make sure the QR code is from a trusted source.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 id="push_payment">Push Payment</h2>
+          <p>
+            A push payment is where the merchant provides the customer with their account credentials and the customer performs a transfer from their account to the merchants.  Once the merchant has confirmed receipt of the funds, the goods or services are released.
+          </p>
+          <h4>Things to consider:</h4>
+          <ul>
+            <li>Make sure the account details are from a trusted source.</li>
+            <li>There may be a delay while the funds are being transferred / confirmed.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 id="smart_contracts">Smart Contracts</h2>
+          <p>
+            Web3 Smart Contracts facilitate some exiciting new options for customer <-> merchant agreements.
+          </p>
+          <h4>Things to consider:</h4>
+          <ul>
+            <li>Smart Contracts are still in their early phases and will require an understanding of crypto</li>
+          </ul>
+        </section>
+        
+    </main>
+</body>
+</html>
