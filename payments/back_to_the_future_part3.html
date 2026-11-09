@@ -54,7 +54,7 @@
         </p>
 
         <p>
-            This year I got a new car, and now I regularly leave the house with only my phone. The car unlocks as I walk up to it, the payment happens with a tap (or a slighly awkward twist of the arm to align my watch to the terminal), and the keys stay in the drawer. Sixteen years on, the first prediction is finally, properly true. :dance:
+            This year I got a new car, and now I regularly leave the house with only my phone. The car unlocks as I walk up to it, the payment happens with a tap (or a slightly awkward twist of the arm to align my watch to the terminal), and the keys stay in the drawer. Sixteen years on, the first prediction is finally, properly true. :dance:
         </p>
 
         <p>
@@ -139,6 +139,10 @@
         </p>
 
         <p>
+            The EU has also pencilled it in in their <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet.md">TS12</a> technical specification for paying with the wallet.  TS12 defines a signed e-mandate for recurring and merchant-initiated payments, with a note that it may be extended in a future version to cover agentic commerce.
+        </p>
+
+        <p>
             The question at checkout changes. It used to be "are you the cardholder?" Next it becomes "is this agent authorised by a verified person, and is this purchase inside the limits they set?" A card number can't answer that. A wallet-signed credential can.
         </p>
         
@@ -156,6 +160,38 @@
           <img src="../assets/images/identity_payments_orchestration.png" class="centre" alt="Today, the customer goes through six steps (account, address form, age tick-box, ID upload, card number, 3DS) before the orchestrator simply routes the payment. Tomorrow, the wallet presents verified credentials or an agent's mandate once, and the orchestrator verifies, permits, assesses risk, then selects and routes to card, account-to-account or other rails." />
           <figcaption class="text-centre">Payment orchestration today, and identity and payments orchestration tomorrow</figcaption>
         </figure>
+
+        <h2>But won't the wallet just do it all?</h2>
+
+        <p>
+            If the wallet holds my identity and my payment methods, and I pick how to pay inside the wallet, isn't checkout just a handoff?
+        </p>
+
+        <p>
+            Partly, yes. The payment method picker, the hosted payment page and the card form might eventually shrink to almost nothing. But 1) this will happen over a long period where the 'old' checkout is alongside the 'new' and 2) the wallet will not complete the actual payment and there are merchant-orientated steps that will still require orchestration.
+        </p>
+
+        <p>
+            The way I think about it: the wallet is the customer's agent, and the orchestrator is the merchant's agent. The wallet looks after what I'm willing to share and how I'm willing to pay. It doesn't care about the merchant's costs, acquirers, compliance duties or fraud losses. Someone still has to look after the merchant's side, and that's where the value moves:
+        </p>
+        <ul>
+            <li>Deciding what to ask for. Which attributes, which payment methods, at what level of assurance. Age limits differ by country and product, and asking for more than you need is a data protection problem in its own right</li>
+            <li>Verifying what comes back, from every wallet. At least 27 national EUDI wallets, plus Apple, Google, bank and private ones, each with its own formats, trust lists and revocation checks. Merchants will want one integration that handles all of them, which is what orchestration already does with PSPs</li>
+            <li>Shaping the choice. The customer picks in the wallet, but the merchant still decides what's on offer: account-to-account first with a discount, say, or no expensive method on a low-margin basket</li>
+            <li>Everything after the authorisation: routing, retries, refunds, recurring payments, reconciliation and disputes</li>
+            <li>Keeping the evidence. When my agent buys under a mandate, the merchant needs the signed proof for the day I say "my agent didn't mean that".</li>
+            <li>Risk that changes rather than disappears. Verified identity kills a lot of impersonation, but scams, friendly fraud and promo abuse are about intent, not identity.</li>
+        </ul>
+
+        <p>
+            And there's a bigger reason. If wallets centralise payments, as I'm predicting, they become the new gatekeepers. Orchestration's real job has always been making sure the merchant isn't locked in to one provider. I’d expect that to extend to wallets too.
+        </p>
+
+        <p>
+            So the checkout itself may get simpler, but the work behind it gets bigger, and that’s why I think payment orchestration has to become identity and payments orchestration
+        </p>
+
+        <h2>I'll check back in 2036</h2>
         
         <p>
             In 2015 I predicted that online and offline would eventually become indistinguishable, with a single customer experience. Identity wallets get us a big step closer: the EU's own demos use the same wallet, the same consent screen and the same biometric whether you're in a shop or on a website.
@@ -174,6 +210,7 @@
             <li><a href="technology_consolidation_prediction.html">Technology Consolidation Prediction</a>, originally published 22 May 2010</li>
             <li><a href="back_to_the_future.html">Back to the Future (of Payments)</a>, originally published 21 October 2015</li>
             <li><a href="https://ec.europa.eu/digital-building-blocks/sites/spaces/EUDIGITALIDENTITYWALLET/pages/935397429/Payment+Authentication">EUDI Wallet: Payment Authentication use case</a>, European Commission</li>
+            <li><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts12-electronic-payments-SCA-implementation-with-wallet.md">TS12: Specification of Strong Customer Authentication (SCA) Implementation with the Wallet</a>, European Commission, v1.0, December 2025</li>
             <li><a href="https://www.namirial.com/en/blog/stories/status-check-eudi-wallet/">Status check: 9 months to the EUDI Wallet</a>, Namirial</li>
             <li><a href="https://techcrunch.com/2026/07/21/uk-government-scraps-plans-for-digital-id-cards-after-millions-of-brits-opposed/">UK government scraps plans for digital ID cards</a>, TechCrunch, 21 July 2026</li>
             <li><a href="https://www.helpnetsecurity.com/2026/04/29/fido-alliance-ai-agents-authentication-payments-standards/">FIDO Alliance wants to keep AI agents from going rogue on online payments</a>, Help Net Security, 29 April 2026</li>
