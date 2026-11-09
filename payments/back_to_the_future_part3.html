@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Back to the Future (of Identity): Part III">
+    <meta name="image" content="https://steve-nester-uk.github.io/assets/images/back_to_the_future.png">        
+    <link rel="stylesheet" href="../style.css">
+    <title>Back to the Future (of Identity): Part III</title>
+  </head>
+  <body>
+    <main>
+        <header class="header">
+            <nav>
+                <a href="../index.html">
+                    <div class="navLeft">
+                        <img src="../assets/images/steve_cartoon2.png" alt="Logo" />
+                        <div class="navTitle">Steve Nester</div>
+                    </div>
+                </a>
+                <ul class="navRight">
+                    <li><a href="https://x.com/stevenesteruk">Twitter</a></li>
+                    <li><a class="" href="../about.html">About</a></li>
+                </ul>
+            </nav>
+        </header>
+        <h1>Back to the Future (of Identity)</h1>
+
+        <p>Published on Mon November 9, 2026</p>
+        <hr>
+
+        <p>
+            Unless you have a time machine it is still difficult to predict the future. But I seem to have a habit of trying.
+        </p>
+        
+        <p>
+            Back in 2010 <a href="technology_consolidation_prediction.html">I predicted</a> that within a few years I would be able to leave my house with only my smartphone, meaning I could make payments, start my car and open my house using just my phone. On 21 October 2015 (the day Marty McFly arrived in the future) I wrote <a href="back_to_the_future.html">Back to the Future (of Payments)</a> and admitted I was a little off. Apple Pay had arrived, but I still needed my keys, and I could only spend under £30 with a tap.
+        </p>
+
+        <p>
+            In 2020 Apple announced NFC-based car keys and I declared victory on LinkedIn. Phone, payments, maps and car keys, all in one device. I also made a new, slightly cheeky prediction: in 10 years I won't have to leave my house at all (if I don't want to). I have until 2030 on that one, so let's call it a work in progress.
+        </p>
+
+        <p>
+            This year I got a Tesla, and now I regularly leave the house with only my phone. The car unlocks as I walk up to it, the payment happens with a tap or a glance, and the keys stay in the drawer. Sixteen years on, the first prediction is finally, properly true.
+        </p>
+
+        <p>
+            So, what's next?
+        </p>
+
+        <h2>My new (not so bold) prediction</h2>
+        <p>
+            In 10 years, identity will be served by government-issued digital IDs, held in self-sovereign identity (SSI) wallets built on decentralised identifiers (DIDs) and verifiable credentials. Those wallets won't just hold who I am. They will hold what I'm allowed to do, and they will become the centre of how I pay.
+        </p>
+
+        <p>
+            Which means payment orchestration as we know it will have to evolve. It won't just be about routing a card to the cheapest or most successful acquirer. It will be identity and payments orchestration.
+        </p>
+        
+        <p>
+            Put another way: the phone got me out of the house without my keys. The wallet inside it is about to get me through the checkout without my email address, my card number or my date of birth.
+        </p>
+
+        <p>
+            Funnily enough, I half-predicted this one back in 2010 too, when I wrote that I'd like to <a href="technology_consolidation_prediction.html">transmit my ID or driving licence to a policeman's device</a>. The phone was ready. It just took a while for governments to catch up.
+        </p>
+
+        <h2>Why now?</h2>
+        <p>
+            Because this time the regulators are pulling, not just the tech companies pushing.
+        </p>
+            
+        <p>
+            Under eIDAS 2.0, every EU member state has to offer its citizens at least one EU Digital Identity (EUDI) Wallet by 24 December 2026. That's six weeks away as I write this. Readiness is patchy (Germany, for example, is <a href="https://www.namirial.com/en/blog/stories/status-check-eudi-wallet/">targeting 2 January 2027</a>), but the deadline is law.
+        </p>
+        
+        <p>
+            The bit that caught my eye as a payments person is the <a href="https://ec.europa.eu/digital-building-blocks/sites/spaces/EUDIGITALIDENTITYWALLET/pages/935397429/Payment+Authentication">EUDI Payment Authentication use case</a>. By the end of 2027, payment service providers will have to accept the wallet for Strong Customer Authentication when a user asks for it. The wallet works on top of existing rails, cards and SEPA instant account-to-account payments alike, so nobody has to rip anything out.
+        </p>
+        
+        <p>
+            Under the hood it is exactly the SSI stack: banks issue an "SCA attestation" into the wallet as a verifiable credential, and the wallet presents it, plus things like proof of age, to the merchant or PSP with selective disclosure. One tap, one biometric, and the merchant gets the payment authorised and the identity facts it needs. The large-scale pilots (EWC and NOBID) have already demoed buying wine online with the age check and the payment in the same flow.
+        </p>
+
+        <p>
+            Of course, it's never a straight line. Here in the UK the new government <a href="https://techcrunch.com/2026/07/21/uk-government-scraps-plans-for-digital-id-cards-after-millions-of-brits-opposed/">scrapped the national digital ID scheme</a> in July, after nearly 3 million people signed a petition against it. So I'll concede that "government-issued" may arrive via Brussels before it arrives via Westminster. That's why this is a 10-year prediction and not a 2-year one.
+        </p>
+        
+        <h2>The checkout that doesn't ask questions</h2>
+        <p>
+            In 2015 I said the high street's secret weapon was that there were no shipping costs, billing addresses or passwords to remember. You just tapped and walked out. Online checkout has spent a decade trying to catch up, and identity wallets are how it finally does.
+        </p>
+
+        <p>
+            Picture a checkout that never asks what your address is, or whether you're over 18. The wallet already holds a verified address and a verified age, and it shares only what the merchant needs: "yes, over 18", not my date of birth.
+        </p>
+            
+        <p>
+            Picture never handing over a persistent credential again. No 16-digit card number for a merchant to store (and lose), and no faffing about generating single-use virtual cards and pasting them into forms. The wallet presents a signed, one-time proof that I authorised this payment, to this merchant, for this amount.
+        </p>
+        
+        <p>
+            And picture the end of two very old habits:
+        </p>
+        <ul>
+            <li>An email address will no longer serve as an identity. It was only ever a contact detail that we turned into a login, a customer ID and a fraud signal because we had nothing better.</li>
+            <li>A card number will no longer serve as a ticket to an account. Knowing a number shouldn't be enough to spend someone's money. Holding a key should.</li>
+        </ul>
+
+        <p>
+            There are already wallets in payments that do some of this, and they've made card payments far more secure with tokens and biometrics. The missing piece has always been identity and permission. SSI and DIDs are that missing piece.
+        </p>
+        
+        <h2>A valet key for my AI agent</h2>
+        
+        <p>
+            Here's where it gets interesting. Identity wallets cross over perfectly into the agentic world.
+        </p>
+        
+        <p>
+            My car has a valet mode. I can hand someone access to drive it, but with limits on what they can do. I want exactly the same thing for my AI agent: a sub-key, signed by my wallet, that says this agent can buy my weekly groceries, up to £120, from these shops, until the end of the month. I can see it, I can cap it, and I can revoke it with one tap.
+        </p>
+        
+        <p>
+            The industry is already heading there. Google's Agent Payments Protocol (AP2) represents what a user has authorised as signed "mandates", carried as verifiable credentials (the same SD-JWT format the EUDI Wallet uses for payment authentication). In April 2026 Google <a href="https://www.helpnetsecurity.com/2026/04/29/fido-alliance-ai-agents-authentication-payments-standards/">donated AP2 to the FIDO Alliance</a>, alongside Mastercard's Verifiable Intent framework, and FIDO set up working groups on agent authentication and agentic payments, with Mastercard and Visa chairing the payments one. The people who gave us passkeys are now working on agent keys.
+        </p>
+
+        <p>
+            The question at checkout changes. It used to be "are you the cardholder?" Next it becomes "is this agent authorised by a verified person, and is this purchase inside the limits they set?" A card number can't answer that. A wallet-signed credential can.
+        </p>
+        
+        <h2>From payment orchestration to identity and payments orchestration</h2>
+
+        <p>
+            So where does this leave payment orchestration? Today an orchestration layer decides which acquirer, which token and which retry strategy gives the best chance of approval at the lowest cost. That job doesn't go away. But it grows.
+        </p>
+        
+        <p>
+            Tomorrow's orchestration layer will also need to request the right credentials (age, address, SCA attestation) from whichever wallet the customer brings, verify them against trust lists, and work out whether the payer is a person or an agent acting under a mandate. Then it routes the payment. Identity, permission and payment become one decision, made in one flow.
+        </p>
+        
+        <p>
+            In 2015 I predicted that online and offline would eventually become indistinguishable, with a single customer experience. Identity wallets get us a big step closer: the EU's own demos use the same wallet, the same consent screen and the same biometric whether you're in a shop or on a website.
+        </p>
+            
+        <p>
+            So here's my (fairly bold) prediction. By 2036, the checkout will know who I am, what I'm allowed to do and who I've allowed to act for me, without me typing a single thing. I'll check back in 10 years. And yes, I'm still working on not having to leave the house at all.
+        </p>
+
+        <p>
+            Let me know what you think!
+        </p>
+        
+        <h2>References</h2>
+        <ul>
+            <li><a href="technology_consolidation_prediction.html">Technology Consolidation Prediction</a>, originally published 22 May 2010</li>
+            <li><a href="back_to_the_future.html">Back to the Future (of Payments)</a>, originally published 21 October 2015</li>
+            <li><a href="https://ec.europa.eu/digital-building-blocks/sites/spaces/EUDIGITALIDENTITYWALLET/pages/935397429/Payment+Authentication">EUDI Wallet: Payment Authentication use case</a>, European Commission</li>
+            <li><a href="https://www.namirial.com/en/blog/stories/status-check-eudi-wallet/">Status check: 9 months to the EUDI Wallet</a>, Namirial</li>
+            <li><a href="https://techcrunch.com/2026/07/21/uk-government-scraps-plans-for-digital-id-cards-after-millions-of-brits-opposed/">UK government scraps plans for digital ID cards</a>, TechCrunch, 21 July 2026</li>
+            <li><a href="https://www.helpnetsecurity.com/2026/04/29/fido-alliance-ai-agents-authentication-payments-standards/">FIDO Alliance wants to keep AI agents from going rogue on online payments</a>, Help Net Security, 29 April 2026</li>
+        </ul>
+        
+    </main>
+</body>
+</html>
