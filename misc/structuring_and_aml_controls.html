@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Structuring Moved Up a Layer and Payment AML Controls Haven't Followed It">
+    <meta property="article:published_time" content="2026-09-10">
+    <link rel="stylesheet" href="../style.css">
+    <title>Structuring Moved Up a Layer and Payment AML Controls Haven't Followed It</title>
+  </head>
+  <body>
+    <main>
+        <header class="header">
+            <nav>
+                <a href="../index.html">
+                    <div class="navLeft">
+                        <img src="../assets/images/steve_cartoon2.png" alt="Logo" />
+                        <div class="navTitle">Steve Nester</div>
+                    </div>
+                </a>
+                <ul class="navRight">
+                    <li><a href="https://x.com/stevenesteruk">Twitter</a></li>
+                    <li><a class="" href="../about.html">About</a></li>
+                </ul>
+            </nav>
+        </header>
+        <h1>Structuring Moved Up a Layer and Payment AML Controls Haven't Followed It</h1>
+
+        <p>Published on September 10, 2026</p>
+        <hr>
+
+        <p>
+            Structuring used to be about amounts. Money launderers would smurf deposits by breaking a large sum into smaller ones to stay under the threshold that triggers scrutiny.
+        </p>
+
+        <p>
+            But every threshold has a denominator and whoever set the traditional thresholds assumed one regulated entity could see the whole customer. A cash reporting threshold only works within a single bank. A fraud ratio only works within a single acquirer.
+        </p>
+
+        <p>
+            Having spent years in payments and payment orchestration, that assumption quietly stopped being true.
+        </p>
+
+        <p>
+            To be clear on two points:
+        </p>
+
+        <ol>
+            <li><b>Payment orchestration is genuinely good</b>, and most serious merchants should be using it. Better auth rates, resilience when a processor fails, real negotiating leverage. I'm not describing a flaw in the technology. I'm describing a side effect nobody designed.</li>
+            <li><b>Payment orchestration is not new.</b> Large merchants have hedged across acquirers and methods for years — it just took a dedicated engineering team, so only large established businesses bothered. But what is new is the price of entry. Payment orchestration platforms make it much simpler to optimise strategies, without an entire engineering team dedicated to it. The side effect is that the denominator stopped meaning what it used to.</li>
+        </ol>
+
+        <p>
+            Route a merchant across five acquirers and each sees a fifth of the picture. Each one's monitoring sees a normal mid-sized merchant. Alternative payment methods and routing rules fragment it further.
+        </p>
+
+        <p>
+            Visa followed partway. VAMP launched in April 2025, consolidating fraud and dispute monitoring into a single ratio at acquirer portfolio level. On 1 April 2026 the merchant threshold tightened from 2.2% to 1.5%, at $8 per disputed transaction, no warning tier.
+        </p>
+
+        <p>
+            The response is MID-hopping. The VAMP monitoring floor is 1,500 combined fraud reports and disputes a month — a merchant generating 6,000 is in scope at one acquirer, but split five ways each sees 1,200 and the merchant is below the threshold. Also disputes lag transactions, so fresh volume inflates the denominator before the numerator arrives. And a merchant contributing a fifth as much to five portfolios is a fifth as likely to be offboarded pre-emptively.
+        </p>
+
+        <p>
+            Now hold that mechanism and change the crime to money laundering.
+        </p>
+
+        <p>
+            A merchant whose customers are mules doesn't generate disputes — money is settled cleanly. Visa moved dispute monitoring up a layer. But nobody has yet moved AML monitoring up a layer, and the same fragmentation defeats it more completely.
+        </p>
+
+        <p>
+            Every party in the chain can be individually compliant while the system stays blind.
+        </p>
+
+        <p>
+            <b>Who is supposed to see the aggregate?</b>
+        </p>
+
+        <hr>
+        <p>
+            <i>Read the follow-up: <a href="who_sees_the_aggregate_aml.html">Part 2: Who Sees the Aggregate? How Jurisdictions are Answering AML Fragmentation</a>.</i>
+        </p>
+
+    </main>
+</body>
+</html>
